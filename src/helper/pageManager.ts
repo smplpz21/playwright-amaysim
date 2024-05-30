@@ -1,5 +1,5 @@
 import { Page } from "@playwright/test";
-import { LandingPage } from "./page-objects/LandingPage";
+import { LandingPage } from "../page-objects/LandingPage";
 
 export class PageManager{
 

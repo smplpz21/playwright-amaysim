@@ -1,12 +1,12 @@
 import { Locator, Page } from "@playwright/test";
+import { HelperBase } from "../helper/HelperBase";
 
-export class LandingPage {
+export class LandingPage extends HelperBase{
 
-    readonly page: Page
-    readonly simPlansLinkText: Locator
+    private readonly simPlansLinkText: Locator
 
     constructor(page: Page) {
-        this.page = page
+        super(page)
         this.simPlansLinkText = page.locator("[aria-label='SIM plans'] span")
     }
 

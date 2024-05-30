@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import {PageManager} from '../src/PageManager'
+import {PageManager} from '../src/helper/pageManager'
 
 test.beforeEach(async({ page })=> {
     await page.goto('https://www.amaysim.com.au/')
