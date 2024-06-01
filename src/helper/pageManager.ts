@@ -1,18 +1,47 @@
 import { Page } from "@playwright/test";
-import { LandingPage } from "../page-objects/LandingPage";
+import { SimPlansNavigationBarPage } from "../page-objects/landing-page/nav-bar/nav-main/sim-plans/simPlansNavigationBarPage";
+import { SimPlansGridPage } from "../page-objects/landing-page/grid-sections/simPlansGridPage";
+import { CartPage } from "../page-objects/cartPage";
+import { AboutPage } from "../page-objects/aboutPage";
+import { PaymentPage } from "../page-objects/paymentPage";
+
 
 export class PageManager{
 
     private readonly page: Page
-    private readonly landingPage: LandingPage
+    private readonly simPlansNavigationBarMain: SimPlansNavigationBarPage
+    private readonly simPlansGridPage: SimPlansGridPage
+    private readonly cartPage: CartPage
+    private readonly aboutPage: AboutPage
+    private readonly paymentPage: PaymentPage
 
     constructor(page: Page){
         this.page = page
-        this.landingPage = new LandingPage(this.page)
+        this.simPlansNavigationBarMain = new SimPlansNavigationBarPage(this.page)
+        this.simPlansGridPage = new SimPlansGridPage(this.page)
+        this.cartPage = new CartPage(this.page)
+        this.aboutPage = new AboutPage(this.page)
+        this.paymentPage = new PaymentPage(this.page)
     }
 
-    onLandingPage(){
-        return this.landingPage
+    onSimPlansNavigationBarMain(){
+        return this.simPlansNavigationBarMain
+    }
+
+    onSimPlansGrid(){
+        return this.simPlansGridPage
+    }
+
+    onCart(){
+        return this.cartPage
+    }
+    
+    onAbout(){
+        return this.aboutPage
+    }
+
+    onPayment(){
+        return this.paymentPage
     }
 
 }
