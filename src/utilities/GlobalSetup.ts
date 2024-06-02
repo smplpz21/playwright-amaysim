@@ -1,13 +1,13 @@
 import { FullConfig } from "@playwright/test";
-
+import dotenv from "dotenv"
 async function globalSetup(config: FullConfig){
     if(!process.env.ENV) {
-        require('dotenv').config({
+      dotenv.config({
           path:`./env/.env`,
           override: true
         })
       } else {
-        require('dotenv').config({
+        dotenv.config({
           path:`./env/.env.${process.env.ENV}`,
           override: true
         })
