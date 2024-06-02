@@ -3,21 +3,33 @@ import { HelperBase } from "../../helper/helperBase";
 
 export class CartPage extends HelperBase{
 
+    private readonly pickNewNumber = this.page.getByText('pick a new number')
+    private readonly selectSimTypeRadio = this.page.locator('input[value="USIM"]')
+    private readonly checkOutButton = this.page.getByTestId('product-checkout-button')
+
     constructor(page: Page){
         super(page)
     }
-
+    
+    /**
+     * Clicks 'Pick a New Number' link
+     */
     async clickPickNewNumber(){
-        await this.page.getByText('pick a new number').first().click()
+        await this.pickNewNumber.first().click()
     }
 
+    /**
+     * Selects a SIM type
+     */
     async selectSimType(){
-        const test = this.page.locator('input[value="USIM"]')
-        await test.check({force: true})
+        await this.selectSimTypeRadio.check({force: true})
     }   
 
+    /**
+     * Clicks checkout button
+     */
     async clickCheckOutButton() {
-        await this.page.getByTestId('product-checkout-button').click()
+        await this.checkOutButton.click()
     }
 
 }

@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { PageManager } from '../src/helper/pageManager'
+import { PageManager } from '../src/helper/pageManager.ts'
 import customerDetails from '../src/test-data/customerDetails.json'
 import paymentDetails from '../src/test-data/paymentDetails.json'
 import plansDetails from '../src/test-data/planDetails.json'
@@ -13,14 +13,17 @@ test.describe('Declined Credit Card Payment Scenario', async () => {
     test('Invalid Payment Test', async({ page }) => {
         const pm = new PageManager(page)
 
+        // Select and checkout a SIM plan type
         await pm.onSimPlansNavigationBarMain().hoverToSimPlans()
         await pm.onSimPlansNavigationBarMain().clickSimPlansOnHover(plansDetails.sim_plan_on_hover)
         await pm.onSimPlansGrid().selectSimPlan(plansDetails.sim_plan_on_grid, plansDetails.data_plan_size)
 
+        // Select new mobile number and SIM type
         await pm.onCart().clickPickNewNumber()
         await pm.onCart().selectSimType()
         await pm.onCart().clickCheckOutButton()
 
+        // Enter customer details
         await pm.onAbout().enterFirstName(customerDetails.first_name)
         await pm.onAbout().enterLastName(customerDetails.last_name)
         await pm.onAbout().enterBirthDate(customerDetails.birth_date)
@@ -32,14 +35,17 @@ test.describe('Declined Credit Card Payment Scenario', async () => {
         await pm.onAbout().clickTermsAndPolicyCheckbox()
         await pm.onAbout().clickContinueToPayment()
 
+        // Enter and submit payment card details
         await pm.onPayment().enterCardNumber(paymentDetails.cc_number)
         await pm.onPayment().enterExpiryDate(paymentDetails.expiry_date)
         await pm.onPayment().enterSecurityCode(paymentDetails.security_code)
         await pm.onPayment().clickConsentCheckbox()
         await pm.onPayment().clickSubmitButton()
 
+        // Checks and wait for about page to load
         expect(await pm.onAbout().isAboutPageDisplayed()).toBeTruthy()
-        expect(await pm.onAbout().isCreditCardPaymentFailedMessageDisplayed())
+        // Verify if error message for failed payment is displayed
+        expect(await pm.onAbout().extractInvalidPaymentErrorMessage())
             .toEqual(customerDetails.error_message_failed_payment)
 
     })
