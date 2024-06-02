@@ -2,7 +2,7 @@ import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
   timeout: 50000,
-  globalSetup: "src/utilities/globalSetup.ts",
+  globalSetup: "src/utilities/GlobalSetup.ts",
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
