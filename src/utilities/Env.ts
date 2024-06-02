@@ -1,3 +1,3 @@
 export default class ENV{
-    public static URL = process.env.BASE_URL 
+    public static URL: string = process.env.BASE_URL ?? '/'
 }

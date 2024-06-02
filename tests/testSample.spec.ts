@@ -6,8 +6,7 @@ import plansDetails from '../src/test-data/planDetails.json'
 import ENV from '../src/utilities/Env.ts'
 
 test.beforeEach(async ({ page }) => {
-    let url: string = ENV.URL ?? "/"
-    await page.goto(url)
+    await page.goto(ENV.URL)
 })
 
 test.describe('Declined Credit Card Payment Scenario', async () => {
@@ -45,7 +44,3 @@ test.describe('Declined Credit Card Payment Scenario', async () => {
 
     })
 })
-
-// test.afterEach(async({ page })=> {
-//     await page.close()
-// })
