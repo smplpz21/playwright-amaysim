@@ -13,7 +13,11 @@
 ## Run test using CMD/Powershell/Terminal
 - Download repo as ZIP
   - Click the green button '<> Code'
+    
+  ![image](https://github.com/smplpz21/playwright-amaysim/assets/171405309/2e4f1674-b4e0-4d78-b81d-e3d678ea9956)
+
   - Click Download as a ZIP
+  
 - Extract ZIP in your chosen directory
 - Open **CMD/Powershell/Terminal**
 - Go to the project directory
