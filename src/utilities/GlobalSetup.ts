@@ -3,12 +3,12 @@ import dotenv from "dotenv"
 async function globalSetup(config: FullConfig){
     if(!process.env.ENV) {
       dotenv.config({
-          path:`./env/.env`,
+          path:`.env`,
           override: true
         })
       } else {
         dotenv.config({
-          path:`./env/.env.${process.env.ENV}`,
+          path:`.env.${process.env.ENV}`,
           override: true
         })
       }
