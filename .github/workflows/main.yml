@@ -20,7 +20,7 @@ jobs:
     - name: 'Create env file'
       run: |
           touch .env
-          echo API_ENDPOINT=""https://www.amaysim.com.au/"" >> .env
+          echo BASE_URL=""https://www.amaysim.com.au/"" >> .env
           cat .env
     - name: Run Playwright tests
       run: npx playwright test --project=chromium
