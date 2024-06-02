@@ -39,7 +39,8 @@ QA and UAT environment urls are using dummy url for now
 
 
 ## Sample test run
-![image](https://github.com/smplpz21/playwright-amaysim/assets/171405309/6affa687-fa1d-4aad-b860-dbe4aaca7578)
+![image](https://github.com/smplpz21/playwright-amaysim/assets/171405309/ece35029-4096-4a1b-afa7-97df89dabb5d)
+
 
 
 
@@ -49,5 +50,5 @@ Run command below
 ```bash
   npx playwright show-report
 ```
-![image](https://github.com/smplpz21/playwright-amaysim/assets/171405309/45c13cbd-bb8a-4c66-a7fa-1162fadf5475)
-![image](https://github.com/smplpz21/playwright-amaysim/assets/171405309/b20c7f9d-0543-4ae4-896d-0817d0297505)
+![image](https://github.com/smplpz21/playwright-amaysim/assets/171405309/d4401322-e53d-40a0-8911-21c4d5a1821d)
+
