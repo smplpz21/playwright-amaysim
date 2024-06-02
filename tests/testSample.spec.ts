@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test'
-import { PageManager } from '../src/helper/PageManager'
+import { PageManager } from '../src/helper/pageManager'
 import customerDetails from '../src/test-data/customerDetails.json'
 import paymentDetails from '../src/test-data/paymentDetails.json'
 import plansDetails from '../src/test-data/planDetails.json'
-import ENV from '../src/utilities/Env'
+import ENV from '../src/utilities/env'
 
 test.beforeEach(async ({ page }) => {
     await page.goto(ENV.BASE_URL)

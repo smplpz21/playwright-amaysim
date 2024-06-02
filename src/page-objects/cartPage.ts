@@ -1,5 +1,5 @@
 import { Page } from "@playwright/test";
-import { HelperBase } from "../helper/HelperBase";
+import { HelperBase } from "../helper/helperBase";
 
 export class CartPage extends HelperBase{
 

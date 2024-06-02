@@ -1,4 +1,4 @@
-import { HelperBase } from "../../../../../helper/HelperBase";
+import { HelperBase } from "../../../../../helper/helperBase";
 import { Locator, Page } from "@playwright/test";
 
 export class SimPlansNavigationBarPage extends HelperBase{
