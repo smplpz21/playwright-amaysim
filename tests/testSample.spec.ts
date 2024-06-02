@@ -3,7 +3,7 @@ import { PageManager } from '../src/helper/pageManager'
 import customerDetails from '../src/test-data/customerDetails.json'
 import paymentDetails from '../src/test-data/paymentDetails.json'
 import plansDetails from '../src/test-data/planDetails.json'
-import ENV from '../src/utilities/env'
+import ENV from '../src/utilities/Env'
 
 test.beforeEach(async ({ page }) => {
     await page.goto(ENV.BASE_URL)
