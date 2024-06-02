@@ -1,4 +1,4 @@
-import { FrameLocator, Locator, Page } from "@playwright/test";
+import { Page } from "@playwright/test";
 import { HelperBase } from "../helper/HelperBase";
 
 export class PaymentPage extends HelperBase {

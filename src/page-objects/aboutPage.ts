@@ -1,5 +1,6 @@
 import { Page } from "@playwright/test";
 import { HelperBase } from "../helper/HelperBase";
+import { TIMEOUT } from "dns";
 
 export class AboutPage extends HelperBase{
 
@@ -14,14 +15,15 @@ export class AboutPage extends HelperBase{
     private readonly termsAndPolicy = this.page.locator('input[name="acceptTermsAndConditions"]')
     private readonly continueToPayment = this.page.getByText('continue to payment')
     private readonly paymentFailedMessage = this.page.locator('.css-cqbrkr')
-    private readonly aboutPageValidation = this.page.waitForSelector(':text-is("already with amaysim?")')
+    private readonly aboutPageValidation = this.page.locator(':text-is("already with amaysim?")')
    
     constructor(page: Page){
         super(page)
     }
 
     public async isAboutPageDisplayed() {
-        return (await this.aboutPageValidation).isVisible()
+        await this.aboutPageValidation.waitFor({state: 'attached'})
+        return await this.aboutPageValidation.isVisible()
     }
 
     async enterFirstName(firstName: string){

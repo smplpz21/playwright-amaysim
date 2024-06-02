@@ -1,16 +1,18 @@
 import { test, expect } from '@playwright/test'
-import { PageManager } from '../src/helper/pageManager'
+import { PageManager } from '../src/helper/PageManager'
 import customerDetails from '../src/test-data/customerDetails.json'
 import paymentDetails from '../src/test-data/paymentDetails.json'
 import plansDetails from '../src/test-data/planDetails.json'
+import ENV from '../src/utilities/Env'
 
-test.beforeEach(async({ page })=> {
-    await page.goto('https://www.amaysim.com.au/')
+test.beforeEach(async ({ page }) => {
+    await page.goto(ENV.BASE_URL)
 })
 
 test.describe('Declined Credit Card Payment Scenario', async () => {
     test('Invalid Payment Test', async({ page }) => {
         const pm = new PageManager(page)
+
         await pm.onSimPlansNavigationBarMain().hoverToSimPlans()
         await pm.onSimPlansNavigationBarMain().clickSimPlansOnHover(plansDetails.sim_plan_on_hover)
         await pm.onSimPlansGrid().selectSimPlan(plansDetails.sim_plan_on_grid, plansDetails.data_plan_size)

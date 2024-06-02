@@ -1,10 +1,9 @@
 import { Page } from "@playwright/test";
-import { SimPlansNavigationBarPage } from "../page-objects/landing-page/nav-bar/nav-main/sim-plans/simPlansNavigationBarPage";
-import { SimPlansGridPage } from "../page-objects/landing-page/grid-sections/simPlansGridPage";
-import { CartPage } from "../page-objects/cartPage";
-import { AboutPage } from "../page-objects/aboutPage";
-import { PaymentPage } from "../page-objects/paymentPage";
-
+import { SimPlansNavigationBarPage } from "../page-objects/landing-page/nav-bar/nav-main/sim-plans/SimPlansNavigationBarPage";
+import { SimPlansGridPage } from "../page-objects/landing-page/grid-sections/SimPlansGridPage";
+import { CartPage } from "../page-objects/CartPage";
+import { AboutPage } from "../page-objects/AboutPage";
+import { PaymentPage } from "../page-objects/PaymentPage";
 
 export class PageManager{
 
