@@ -12,6 +12,8 @@
 #### _*If NodeJs and NPM is not yet installed, Install according to your machine using this link [NodeJS Installer](https://nodejs.org/en/download/prebuilt-installer). NPM will automatically be installed._
 ## Run test using CMD/Powershell/Terminal
 - Download repo as ZIP
+  - Click the green button '<> Code'
+  - Click Download as a ZIP
 - Extract ZIP in your chosen directory
 - Open **CMD/Powershell/Terminal**
 - Go to the project directory
