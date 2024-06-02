@@ -5,7 +5,7 @@ import dotenv from "dotenv"
 
 async function globalSetup(config: FullConfig){
   dotenv.config({
-    path:`.env.prod`,
+    path:`.env`,
     override: true
   })
     // if(!process.env.ENV) {
