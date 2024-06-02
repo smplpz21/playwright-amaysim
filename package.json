@@ -6,7 +6,7 @@
   "scripts": {
     "test-qa-chromium": "cross-env ENV=qa npx playwright test --project=chromium --headed",
     "test-uat-chromium": "cross-env ENV=uat npx playwright test --project=chromium --headed",
-    "test-prod-chromium": "cross-env ENV=prod npx playwright test --project=chromium --headed",
+    "test-prod-chromium": "npx playwright test testSample.spec.ts --project=chromium --headed cross-env ENV=prod",
     "test-qa-firefox": "cross-env ENV=qa npx playwright test --project=firefox --headed",
     "test-uat-firefox": "cross-env ENV=uat npx playwright test --project=firefox --headed",
     "test-prod-firefox": "cross-env ENV=prod npx playwright test --project=firefox --headed",

@@ -3,10 +3,11 @@ import { PageManager } from '../src/helper/pageManager'
 import customerDetails from '../src/test-data/customerDetails.json'
 import paymentDetails from '../src/test-data/paymentDetails.json'
 import plansDetails from '../src/test-data/planDetails.json'
-import ENV from '../src/utilities/Env'
+import ENV from '../src/utilities/Env.ts'
 
 test.beforeEach(async ({ page }) => {
-    await page.goto(ENV.BASE_URL)
+    let url: string = ENV.URL ?? "/"
+    await page.goto(url)
 })
 
 test.describe('Declined Credit Card Payment Scenario', async () => {
